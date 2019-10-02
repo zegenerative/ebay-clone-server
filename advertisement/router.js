@@ -22,14 +22,16 @@ router.get('/advertisement', (req, res, next) => {
 
 //see specific advertisement(AdDetails)
 router.get('/advertisement/:id', (req, res, next) => {
+    console.log('oh hi?', req.params)
     Advertisement.findByPk(req.params.id)
     .then(advertisement => {
+        console.log(advertisement)
         res.send(advertisement)
     })
     .catch(next)
 })
 
-//update an advertisment(AdDetailsContainer)
+//update an advertisement(AdDetailsContainer)
 router.put('/advertisement/:id', (req, res, next) => {
     Advertisement.findByPk(req.params.id)
     .then(advertisement => {
@@ -43,6 +45,7 @@ router.put('/advertisement/:id', (req, res, next) => {
     .catch(next)
 })
 
+//delete Ad
 router.delete('/advertisement/:id', (req, res, next) => {
     Advertisement.destroy({
         where: {

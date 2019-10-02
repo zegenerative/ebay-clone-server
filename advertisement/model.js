@@ -7,7 +7,7 @@ const Advertisement = db.define('Advertisement', {
     url: Sequelize.STRING,
     price: Sequelize.INTEGER,
     email: Sequelize.STRING,
-    phone: Sequelize.INTEGER
+    phone: Sequelize.STRING
 })
 
 module.exports = Advertisement
